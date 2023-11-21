@@ -1,0 +1,1 @@
+{"@timestamp":"2023-11-21 08:47:24","caller":"handler/loghandler.go:131","content":"[HTTP] 200 - GET /v1/list?sex=O - 127.0.0.1:58706 - Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36 - slowcall(633.0ms)","duration":"633.0ms","level":"slow","span":"54c877245b8e8699","trace":"41712e118c042df65ebd0adddb004f8d"}

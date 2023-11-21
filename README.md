@@ -1,0 +1,15 @@
+> 项目说明
+- model:
+  - model使用的的是gorm的gen自动生成的代码，所以model的结构是固定的，如果需要修改，请参考gorm的gen文档修改生成代码的参数
+  - 修改数据库表结构先再数据库修改，然后执行命令`make model`生成model代码
+- http response status 说明
+  - 200: 正常
+    - body code:
+      - -1: 普通错误
+      - 500: 服务器错误（需要查日志定位）
+      - 400: 参数错误，会将错误信息直接返回给前端
+    - 错误码制定：
+      - -1 默认错误码不需要做任何处理，直接再logic中 `return nil, err` 即可
+      - 非-1的错误码，需要在logic中特殊设置下，如 `return nil, errors.New(http.StatusInternalServerError, "系统内部错误")`
+  - 401: 未登录
+    - body为空

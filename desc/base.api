@@ -1,0 +1,9 @@
+type Base {
+	Code int    `json:"code"`
+	Msg  string `json:"msg"`
+}
+
+type Pagination {
+	Page     int64 `form:"page,optional,default=1"`
+	PageSize int64 `form:"page_size,optional,default=10"`
+}

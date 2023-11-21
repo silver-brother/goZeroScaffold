@@ -1,0 +1,23 @@
+Name: Main
+Host: 0.0.0.0
+Port: 8085
+
+Log:
+  Mode: file
+  KeepDays: 900
+  Path: logs
+  Compress: true
+  Encoding: json
+  TimeFormat: 2006-01-02 15:04:05
+
+Mysql:
+  DataSource: root:Ktza_1234@tcp(39.97.101.114:3306)/ois?charset=utf8mb4&parseTime=true&loc=Asia%2FShanghai
+
+Redis:
+  Host: 127.0.0.1:6379
+  Type: node
+  Pass:
+
+Auth:
+  AccessSecret: $1$aab#21$8lYoGRrfeucwf9qIKxknY0
+  AccessExpire: 604800 # 7*24*3600

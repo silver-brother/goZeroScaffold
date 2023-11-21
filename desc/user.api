@@ -1,0 +1,33 @@
+syntax = "v1"
+
+// base api
+import "base.api"
+
+// ==================== list ====================
+type userListReq {
+	Pagination
+	Sex string `form:"sex,options=M|F|O,optional"`
+}
+type UserListItem {
+	ID int64 `json:"id"`
+}
+type userListRes {
+	Total int64           `json:"total"`
+	Data  []*UserListItem `json:"data"`
+}
+
+@server (
+	//	jwt:        Auth
+	prefix:     v1/user
+	group:      v1/user
+	timeout:    3s // 接口请求超时时间
+	middleware: AuthInterceptor
+	maxBytes:   1048576 // 单位byte
+)
+
+service Main {
+
+	@doc "list"
+	@handler list
+	get /list (userListReq) returns (userListRes)
+}
